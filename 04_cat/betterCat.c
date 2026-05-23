@@ -2,18 +2,24 @@
 #include <stdio.h>
 
 // Function prototype
+int get_n(void);
 void meow(int times);
 
 int main(void)
 {
+    int n = get_n();
+    meow(n);
+}
+
+int get_n(void)
+{
     int n;
-    do 
+    do
     {
         n = get_int("How many times do you want me to meow? ");
     }
     while (n <= 0);
-
-    meow(n);
+    return n;
 }
 
 void meow(int times)
